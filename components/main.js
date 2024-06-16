@@ -183,19 +183,25 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const iconGrid = document.getElementById("iconGrid");
-const searchInput = document.getElementById("searchInput");
-const modal = document.getElementById("iconModal");
-const modalIcon = document.getElementById("modalIcon");
-const modalIconName = document.getElementById("modalIconName");
-const downloadSVG = document.getElementById("downloadSVG");
-const downloadPNG = document.getElementById("downloadPNG");
-const closeButton = document.querySelector(".close-button");
+    const searchInput = document.getElementById("searchInput");
+    const modal = document.getElementById("iconModal");
+    const modalIcon = document.getElementById("modalIcon");
+    const modalIconName = document.getElementById("modalIconName");
+    const downloadSVG = document.getElementById("downloadSVG");
+    const downloadPNG = document.getElementById("generatePNG");
+    const closeButton = document.querySelector(".close-button");
 
-// Función para renderizar los iconos
-function renderIcons(filter = "") {
-    iconGrid.innerHTML = "";
-    const filteredIcons = icons.filter(icon => icon.name.toLowerCase().includes(filter.toLowerCase()));
-    filteredIcons.forEach(icon => {
+    // Renderiza los íconos en la cuadrícula
+    function renderIcons() {
+        iconGrid.innerHTML = "";
+        icons.forEach(icon => {
+            const iconItem = createIconItem(icon);
+            iconGrid.appendChild(iconItem);
+        });
+    }
+
+    // Crea un elemento de ícono individual
+    function createIconItem(icon) {
         const iconItem = document.createElement("div");
         iconItem.className = "icon-item";
         iconItem.innerHTML = `
@@ -203,75 +209,120 @@ function renderIcons(filter = "") {
             <p>${icon.name}</p>
         `;
         iconItem.addEventListener("click", () => openModal(icon));
-        iconGrid.appendChild(iconItem);
-    });
-}
-
-// Función para abrir el modal con el icono seleccionado
-function openModal(icon) {
-    modalIcon.src = `icons/${icon.file}`;
-    modalIconName.textContent = icon.name;
-    downloadSVG.href = `icons/${icon.file}`;
-    downloadSVG.download = `${icon.name}.svg`;
-
-    // Generar un PNG a partir del SVG usando Canvas
-    generatePNG(`icons/${icon.file}`, `${icon.name}.png`, (pngURL) => {
-        downloadPNG.href = pngURL;
-    });
-
-    modal.style.display = "block";
-}
-
-// Función para cerrar el modal
-function closeModal() {
-    modal.style.display = "none";
-}
-
-closeButton.addEventListener("click", closeModal);
-
-// Cerrar el modal cuando se hace clic fuera de la ventana modal
-window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        closeModal();
+        return iconItem;
     }
-});
 
-// Filtra iconos en tiempo real al escribir en el campo de búsqueda
-searchInput.addEventListener("input", () => {
-    renderIcons(searchInput.value);
-});
+    // Abre el modal con la información del ícono seleccionado
+    function openModal(icon) {
+        modalIcon.src = `icons/${icon.file}`;
+        modalIconName.textContent = icon.name;
 
-// Inicializa la vista con todos los iconos
-renderIcons();
+        // Configura el enlace para descargar el SVG
+        downloadSVG.href = `icons/${icon.file}`;
+        downloadSVG.download = `${icon.name}.svg`;
 
-// Función para generar PNG desde SVG usando Canvas
-function generatePNG(svgUrl, fileName, callback) {
-    const img = new Image();
-    img.src = svgUrl;
-    img.onload = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = img.width;
-        canvas.height = img.height;
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(img, 0, 0);
-        canvas.toBlob((blob) => {
-            const url = URL.createObjectURL(blob);
-            callback(url);
-        }, "image/png");
-    };
-}
+        // Genera el PNG y configura el enlace para descargar el PNG
+        generatePNG(`icons/${icon.file}`, `${icon.name}.png`, (pngURL) => {
+            downloadPNG.href = pngURL;
+            downloadPNG.download = `${icon.name}.png`;
+        });
+
+        modal.style.display = "block";
+    }
+
+    // Cierra el modal
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Cierra el modal si se hace clic fuera de él
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Filtra los íconos en tiempo real al escribir en el campo de búsqueda
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        const filteredIcons = icons.filter(icon => icon.name.toLowerCase().includes(query));
+        renderFilteredIcons(filteredIcons);
+    });
+
+    // Renderiza los íconos filtrados
+    function renderFilteredIcons(filteredIcons) {
+        iconGrid.innerHTML = "";
+        filteredIcons.forEach(icon => {
+            const iconItem = createIconItem(icon);
+            iconGrid.appendChild(iconItem);
+        });
+    }
+
+    // Función para generar un PNG desde un SVG usando Canvas
+    function generatePNG(svgUrl, fileName, callback) {
+        const img = new Image();
+        img.src = svgUrl;
+        img.onload = () => {
+            const canvas = document.createElement("canvas");
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0);
+            canvas.toBlob((blob) => {
+                const url = URL.createObjectURL(blob);
+                callback(url);
+            }, "image/png");
+        };
+    }
+
+    // Función para descargar el ícono en SVG o PNG
+    function downloadIcon(format) {
+        let downloadLink;
+        if (format === 'svg') {
+            downloadLink = downloadSVG;
+        } else if (format === 'png') {
+            downloadLink = downloadPNG;
+        } else {
+            return; // Si el formato no es válido, salir de la función
+        }
+
+        const clickEvent = new MouseEvent('click', {
+            view: window,
+            bubbles: true,
+            cancelable: true
+        });
+        downloadLink.dispatchEvent(clickEvent);
+    }
+
+    // Evento para el botón de cerrar el modal
+    closeButton.addEventListener("click", closeModal);
+
+    // Evento para descargar el SVG
+    downloadSVG.addEventListener("click", (event) => {
+        event.preventDefault();
+        downloadIcon('svg');
+    });
+
+    // Evento para descargar el PNG
+    downloadPNG.addEventListener("click", (event) => {
+        event.preventDefault();
+        downloadIcon('png');
+    });
+
+    // Inicializa la vista con todos los íconos
+    renderIcons();
 });
 
 // Interceptar el evento de clic derecho
 document.addEventListener("contextmenu", function(event) {
-event.preventDefault();
-
-});
-
-// Interceptar el evento de tecla presionada
-document.addEventListener("keydown", function(event) {
-// Verificar si la tecla es F12 (código de tecla 123)
-if (event.key === "F12" || event.keyCode === 123) {
-event.preventDefault();
-}
-});
+    event.preventDefault();
+    
+    });
+    
+    // Interceptar el evento de tecla presionada
+    document.addEventListener("keydown", function(event) {
+    // Verificar si la tecla es F12 (código de tecla 123)
+    if (event.key === "F12" || event.keyCode === 123) {
+    event.preventDefault();
+    }
+    });
