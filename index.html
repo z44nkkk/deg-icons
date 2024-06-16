@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/components/home.css">
+    <title>DEG Icons</title>
+    <link rel="stylesheet" href="components/home.css">
+
+    <link rel="shortcut icon" href="icons/logotipo.png" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -18,212 +20,450 @@
     <main>
         <div class="filters">
             <button onclick="resetFilters()">Todos</button>
+
             <!-- Añadir más filtros si es necesario -->
         </div>
-        <div class="icon-grid" id="iconGrid">
+            <div class="icon-grid" id="iconGrid">
                 <!-- Ejemplos de iconos, añade más según tu colección -->
-            <div class="icon-item" data-name="casa">
-                <img src="icons/home.svg" alt="Casa">
-                <p>Casa</p>
-            </div>
-            <div class="icon-item" data-name="buscar">
-                <img src="icons/search.svg" alt="Buscar">
-                <p>Buscar</p>
-            </div>
-            <div class="icon-item" data-name="menu">
-                <img src="icons/menu.svg" alt="Menu">
-                <p>Menu</p>
-            </div>
-            <div class="icon-item" data-name="cerrar">
-                <img src="icons/close.svg" alt="Cerrar">
-                <p>Cerrar</p>
-            </div>
-            <div class="icon-item" data-name="ajustes">
-                <img src="icons/settings.svg" alt="Ajustes">
-                <p>Ajustes</p>
-            </div>
-            <div class="icon-item" data-name="perfecto circulo">
-                <img src="icons/check-circle.svg" alt="Perfecto circulo">
-                <p>Perfecto circulo</p>
-            </div>
-            <div class="icon-item" data-name="corazon">
-                <img src="icons/favorite.svg" alt="Corazon">
-                <p>Corazon</p>
-            </div>
-            <div class="icon-item" data-name="mas">
-                <img src="icons/add.svg" alt="Más">
-                <p>Más</p>
-            </div>
-            <div class="icon-item" data-name="borrar">
-                <img src="icons/delete.svg" alt="Borrar">
-                <p>Borrar</p>
-            </div>
-            <div class="icon-item" data-name="flecha atras">
-                <img src="icons/arrow-back.svg" alt="Flecha Atras">
-                <p>Flecha Atras</p>
-            </div>
-            <div class="icon-item" data-name="estrella">
-                <img src="icons/star.svg" alt="Estrella">
-                <p>Estrella</p>
-            </div>
-            <div class="icon-item" data-name="flecha derecha">
-                <img src="icons/chevron-right.svg" alt="Flecha Derecha">
-                <p>Flecha Derecha</p>
-            </div>
-            <div class="icon-item" data-name="salir">
-                <img src="icons/logout.svg" alt="Salir">
-                <p>Salir</p>
-            </div>
-            <div class="icon-item" data-name="flecha derecha ios">
-                <img src="icons/arrow-forward-ios.svg" alt="Flecha Derecha iOS">
-                <p>Flecha Derecha iOS</p>
-            </div>
-            <div class="icon-item" data-name="mas circulo">
-                <img src="icons/add-circle.svg" alt="Más circulo">
-                <p>Más circulo</p>
-            </div>
-            <div class="icon-item" data-name="cancelar">
-                <img src="icons/cancel.svg" alt="Cancelar">
-                <p>Cancelar</p>
-            </div>
-            <div class="icon-item" data-name="flecha volver ios">
-                <img src="icons/arrow-back-ios.svg" alt="Flecha Volver iOS">
-                <p>Flecha volver iOS</p>
-            </div>
-            <div class="icon-item" data-name="Flecha Derecha">
-                <img src="icons/arrow-forward.svg" alt="Flecha Derecha">
-                <p>Flecha Derecha</p>
-            </div>
-            <div class="icon-item" data-name="flecha hacia abajo">
-                <img src="icons/arrow-drop-down.svg" alt="Flecha hacia Abajo">
-                <p>Flecha hacia Abajo</p>
-            </div>
-            <div class="icon-item" data-name="mas vertical">
-                <img src="icons/more-vert.svg" alt="Más vertical">
-                <p>Más Vertical</p>
-            </div>
-            <div class="icon-item" data-name="perfecto">
-                <img src="icons/check.svg" alt="Perfecto">
-                <p>Perfecto</p>
-            </div>
-            <div class="icon-item" data-name="perfecto caja">
-                <img src="icons/check-box.svg" alt="Perfecto caja">
-                <p>Perfecto Caja</p>
-            </div>
-            <div class="icon-item" data-name="abrir">
-                <img src="icons/open-in-new.svg" alt="Abrir">
-                <p>Abrir</p>
-            </div>
-            <div class="icon-item" data-name="opcion activada">
-                <img src="icons/toggle-on.svg" alt="Opcion Activada">
-                <p>Opcion activada</p>
-            </div>
-            <div class="icon-item" data-name="recargar">
-                <img src="icons/refresh.svg" alt="Recargar">
-                <p>Recargar</p>
-            </div>
-            <div class="icon-item" data-name="entrar">
-                <img src="icons/login.svg" alt="Entrar">
-                <p>Entrar</p>
-            </div>
-            <div class="icon-item" data-name="flecha izquierda">
-                <img src="icons/chevron-left.svg" alt="Flecha Izquierda">
-                <p>Flecha Izquierda</p>
-            </div>
-            <div class="icon-item" data-name="mas horinzontal">
-                <img src="icons/more-horiz.svg" alt="Más Horizontal">
-                <p>Más Horizontal</p>
-            </div>
-            <div class="icon-item" data-name="descargar">
-                <img src="icons/download.svg" alt="Descargar">
-                <p>Descargar</p>
-            </div>
-            <div class="icon-item" data-name="aplicaciones">
-                <img src="icons/apps.svg" alt="Aplicaciones">
-                <p>Aplicaciones</p>
-            </div>
-            <div class="icon-item" data-name="flecha derecha alt">
-                <img src="icons/arrow-right-alt.svg" alt="Flecha Derecha Alt">
-                <p>Flecha Derecha Alt</p>
-            </div><div class="icon-item" data-name="eliminar">
-                <img src="icons/remove.svg" alt="Eliminar">
-                <p>Eliminar</p>
-            </div>
-            <div class="icon-item" data-name="rayo">
-                <img src="icons/bolt.svg" alt="Rayo">
-                <p>Rayo</p>
-            </div>
-            <div class="icon-item" data-name="opcion desactivada">
-                <img src="icons/toggle-off.svg" alt="Opcion desactivada">
-                <p>Opcion desactivada</p>
-            </div>
-            <div class="icon-item" data-name="flecha hacia arriba">
-                <img src="icons/arrow-upward.svg" alt="Flecha hacia Arriba">
-                <p>Flecha hacia Arriba</p>
-            </div>
-            <div class="icon-item" data-name="borrar para siempre">
-                <img src="icons/delete-forever.svg" alt="Borrar para siempre">
-                <p>Borrar para siempre</p>
-            </div>
-            <div class="icon-item" data-name="renovar">
-                <img src="icons/autorenew.svg" alt="Renovar">
-                <p>Renovar</p>
-            </div>
-            <div class="icon-item" data-name="lleva">
-                <img src="icons/key.svg" alt="Lleva">
-                <p>Llave</p>
-            </div>
-            <div class="icon-item" data-name="bloqueado">
-                <img src="icons/block.svg" alt="Bloqueado">
-                <p>Bloqueado</p>
-            </div>
-            <div class="icon-item" data-name="añadir caja">
-                <img src="icons/add-box.svg" alt="Añadir caja">
-                <p>Añadir Caja</p>
-            </div>
-            <div class="icon-item" data-name="carrito de compra">
-                <img src="icons/shopping-cart-checkout.svg" alt="Carrito de compra">
-                <p>Carrito de compra</p>
-            </div>
-            <div class="icon-item" data-name="menu abierto">
-                <img src="icons/menu-open.svg" alt="Menu abierto">
-                <p>Menu abierto</p>
-            </div>
-            <div class="icon-item" data-name="atras">
-                <img src="icons/back.svg" alt="Atras">
-                <p>Atras</p>
-            </div>
-            <div class="icon-item" data-name="compartir">
-                <img src="icons/share.svg" alt="Compartir">
-                <p>Compartir</p>
-            </div>
-            <div class="icon-item" data-name="abc">
-                <img src="icons/abc.svg" alt="ABC">
-                <p>ABC</p>
-            </div>
-            <div class="icon-item" data-name="html">
-                <img src="icons/html.svg" alt="HTML">
-                <p>HTML</p>
-            </div>
-            <div class="icon-item" data-name="javascript">
-                <img src="icons/js.svg" alt="JavaScript">
-                <p>JavaScript</p>
-            </div>
-            <div class="icon-item" data-name="php">
-                <img src="icons/php.svg" alt="PHP">
-                <p>PHP</p>
-            </div>
-            <div class="icon-item" data-name="descargar 2">
-                <img src="icons/download2.svg" alt="Descargar 2">
-                <p>Descargar 2</p>
-            </div>
-            </div>
+                <div class="icon-item" data-name="casa">
+                    <img src="icons/home.svg" alt="Casa">
+                    <p>Casa</p>
+                </div>
+                <div class="icon-item" data-name="buscar">
+                    <img src="icons/search.svg" alt="Buscar">
+                    <p>Buscar</p>
+                </div>
+                <div class="icon-item" data-name="menu">
+                    <img src="icons/menu.svg" alt="Menu">
+                    <p>Menu</p>
+                </div>
+                <div class="icon-item" data-name="cerrar">
+                    <img src="icons/close.svg" alt="Cerrar">
+                    <p>Cerrar</p>
+                </div>
+                <div class="icon-item" data-name="ajustes">
+                    <img src="icons/settings.svg" alt="Ajustes">
+                    <p>Ajustes</p>
+                </div>
+                <div class="icon-item" data-name="perfecto circulo">
+                    <img src="icons/check-circle.svg" alt="Perfecto circulo">
+                    <p>Perfecto circulo</p>
+                </div>
+                <div class="icon-item" data-name="corazon">
+                    <img src="icons/favorite.svg" alt="Corazon">
+                    <p>Corazon</p>
+                </div>
+                <div class="icon-item" data-name="mas">
+                    <img src="icons/add.svg" alt="Más">
+                    <p>Más</p>
+                </div>
+                <div class="icon-item" data-name="borrar">
+                    <img src="icons/delete.svg" alt="Borrar">
+                    <p>Borrar</p>
+                </div>
+                <div class="icon-item" data-name="flecha atras">
+                    <img src="icons/arrow-back.svg" alt="Flecha Atras">
+                    <p>Flecha Atras</p>
+                </div>
+                <div class="icon-item" data-name="estrella">
+                    <img src="icons/star.svg" alt="Estrella">
+                    <p>Estrella</p>
+                </div>
+                <div class="icon-item" data-name="flecha derecha">
+                    <img src="icons/chevron-right.svg" alt="Flecha Derecha">
+                    <p>Flecha Derecha</p>
+                </div>
+                <div class="icon-item" data-name="salir">
+                    <img src="icons/logout.svg" alt="Salir">
+                    <p>Salir</p>
+                </div>
+                <div class="icon-item" data-name="flecha derecha ios">
+                    <img src="icons/arrow-forward-ios.svg" alt="Flecha Derecha iOS">
+                    <p>Flecha Derecha iOS</p>
+                </div>
+                <div class="icon-item" data-name="mas circulo">
+                    <img src="icons/add-circle.svg" alt="Más circulo">
+                    <p>Más circulo</p>
+                </div>
+                <div class="icon-item" data-name="cancelar">
+                    <img src="icons/cancel.svg" alt="Cancelar">
+                    <p>Cancelar</p>
+                </div>
+                <div class="icon-item" data-name="flecha volver ios">
+                    <img src="icons/arrow-back-ios.svg" alt="Flecha Volver iOS">
+                    <p>Flecha volver iOS</p>
+                </div>
+                <div class="icon-item" data-name="Flecha Derecha">
+                    <img src="icons/arrow-forward.svg" alt="Flecha Derecha">
+                    <p>Flecha Derecha</p>
+                </div>
+                <div class="icon-item" data-name="flecha hacia abajo">
+                    <img src="icons/arrow-drop-down.svg" alt="Flecha hacia Abajo">
+                    <p>Flecha hacia Abajo</p>
+                </div>
+                <div class="icon-item" data-name="mas vertical">
+                    <img src="icons/more-vert.svg" alt="Más vertical">
+                    <p>Más Vertical</p>
+                </div>
+                <div class="icon-item" data-name="perfecto">
+                    <img src="icons/check.svg" alt="Perfecto">
+                    <p>Perfecto</p>
+                </div>
+                <div class="icon-item" data-name="perfecto caja">
+                    <img src="icons/check-box.svg" alt="Perfecto caja">
+                    <p>Perfecto Caja</p>
+                </div>
+                <div class="icon-item" data-name="abrir">
+                    <img src="icons/open-in-new.svg" alt="Abrir">
+                    <p>Abrir</p>
+                </div>
+                <div class="icon-item" data-name="opcion activada">
+                    <img src="icons/toggle-on.svg" alt="Opcion Activada">
+                    <p>Opcion activada</p>
+                </div>
+                <div class="icon-item" data-name="recargar">
+                    <img src="icons/refresh.svg" alt="Recargar">
+                    <p>Recargar</p>
+                </div>
+                <div class="icon-item" data-name="entrar">
+                    <img src="icons/login.svg" alt="Entrar">
+                    <p>Entrar</p>
+                </div>
+                <div class="icon-item" data-name="flecha izquierda">
+                    <img src="icons/chevron-left.svg" alt="Flecha Izquierda">
+                    <p>Flecha Izquierda</p>
+                </div>
+                <div class="icon-item" data-name="mas horinzontal">
+                    <img src="icons/more-horiz.svg" alt="Más Horizontal">
+                    <p>Más Horizontal</p>
+                </div>
+                <div class="icon-item" data-name="descargar">
+                    <img src="icons/download.svg" alt="Descargar">
+                    <p>Descargar</p>
+                </div>
+                <div class="icon-item" data-name="aplicaciones">
+                    <img src="icons/apps.svg" alt="Aplicaciones">
+                    <p>Aplicaciones</p>
+                </div>
+                <div class="icon-item" data-name="flecha derecha alt">
+                    <img src="icons/arrow-right-alt.svg" alt="Flecha Derecha Alt">
+                    <p>Flecha Derecha Alt</p>
+                </div><div class="icon-item" data-name="eliminar">
+                    <img src="icons/remove.svg" alt="Eliminar">
+                    <p>Eliminar</p>
+                </div>
+                <div class="icon-item" data-name="rayo">
+                    <img src="icons/bolt.svg" alt="Rayo">
+                    <p>Rayo</p>
+                </div>
+                <div class="icon-item" data-name="opcion desactivada">
+                    <img src="icons/toggle-off.svg" alt="Opcion desactivada">
+                    <p>Opcion desactivada</p>
+                </div>
+                <div class="icon-item" data-name="flecha hacia arriba">
+                    <img src="icons/arrow-upward.svg" alt="Flecha hacia Arriba">
+                    <p>Flecha hacia Arriba</p>
+                </div>
+                <div class="icon-item" data-name="borrar para siempre">
+                    <img src="icons/delete-forever.svg" alt="Borrar para siempre">
+                    <p>Borrar para siempre</p>
+                </div>
+                <div class="icon-item" data-name="renovar">
+                    <img src="icons/autorenew.svg" alt="Renovar">
+                    <p>Renovar</p>
+                </div>
+                <div class="icon-item" data-name="lleva">
+                    <img src="icons/key.svg" alt="Lleva">
+                    <p>Llave</p>
+                </div>
+                <div class="icon-item" data-name="bloqueado">
+                    <img src="icons/block.svg" alt="Bloqueado">
+                    <p>Bloqueado</p>
+                </div>
+                <div class="icon-item" data-name="añadir caja">
+                    <img src="icons/add-box.svg" alt="Añadir caja">
+                    <p>Añadir Caja</p>
+                </div>
+                <div class="icon-item" data-name="carrito de compra">
+                    <img src="icons/shopping-cart-checkout.svg" alt="Carrito de compra">
+                    <p>Carrito de compra</p>
+                </div>
+                <div class="icon-item" data-name="menu abierto">
+                    <img src="icons/menu-open.svg" alt="Menu abierto">
+                    <p>Menu abierto</p>
+                </div>
+                <div class="icon-item" data-name="atras">
+                    <img src="icons/back.svg" alt="Atras">
+                    <p>Atras</p>
+                </div>
+                <div class="icon-item" data-name="compartir">
+                    <img src="icons/share.svg" alt="Compartir">
+                    <p>Compartir</p>
+                </div>
+                <div class="icon-item" data-name="descargar 2">
+                    <img src="icons/download2.svg" alt="Descargar 2">
+                    <p>Descargar 2</p>
+                </div>
+                <div class="icon-item" data-name="consola">
+                    <img src="icons/terminal.svg" alt="Consola">
+                    <p>Consola</p>
+                </div>
+                <div class="icon-item" data-name="pantalla completa">
+                    <img src="icons/fullscreen.svg" alt="Pantalla Completa">
+                    <p>Pantalla completa</p>
+                </div>
+                <div class="icon-item" data-name="extensiones desactivadas">
+                    <img src="icons/extension-off.svg" alt="Extensiones desactivadas">
+                    <p>Extensiones desactivadas</p>
+                </div>
+                <div class="icon-item" data-name="persona">
+                    <img src="icons/person.svg" alt="Persona">
+                    <p>Persona</p>
+                </div>
+                <div class="icon-item" data-name="grupo">
+                    <img src="icons/grup.svg" alt="Grupo">
+                    <p>Grupo</p>
+                </div>
+                <div class="icon-item" data-name="me gusta">
+                    <img src="icons/like.svg" alt="Me gusta">
+                    <p>Me gusta</p>
+                </div>
+                <div class="icon-item" data-name="grupos">
+                    <img src="icons/grups.svg" alt="Grupos">
+                    <p>Grupos</p>
+                </div>
+                <div class="icon-item" data-name="publico">
+                    <img src="icons/public.svg" alt="Publico">
+                    <p>Publico</p>
+                </div>
+                <div class="icon-item" data-name="añadir persona">
+                    <img src="icons/person-add.svg" alt="Añadir persona">
+                    <p>Añadir persona</p>
+                </div>
+                <div class="icon-item" data-name="soporte">
+                    <img src="icons/support.svg" alt="Soporte">
+                    <p>Soporte</p>
+                </div>
+                <div class="icon-item" data-name="cara">
+                    <img src="icons/face.svg" alt="Cara">
+                    <p>Cara</p>
+                </div>
+                <div class="icon-item" data-name="cohete">
+                    <img src="icons/rocket.svg" alt="Cohete">
+                    <p>Cohete</p>
+                </div>
+                <div class="icon-item" data-name="añadir grupo">
+                    <img src="icons/grup-add.svg" alt="Añadir Grupo">
+                    <p>Añadir Grupo</p>
+                </div>
+                <div class="icon-item" data-name="logro">
+                    <img src="icons/logro.svg" alt="Logro">
+                    <p>Logro</p>
+                </div>
+                <div class="icon-item" data-name="diversion">
+                    <img src="icons/diversion.svg" alt="Diversion">
+                    <p>Diversion</p>
+                </div>
+                <div class="icon-item" data-name="luz">
+                    <img src="icons/luz.svg" alt="Luz">
+                    <p>Luz</p>
+                </div>
+                <div class="icon-item" data-name="agua">
+                    <img src="icons/water.svg" alt="Agua">
+                    <p>Agua</p>
+                </div>
+                <div class="icon-item" data-name="hoja">
+                    <img src="icons/hoja.svg" alt="Hoja">
+                    <p>Hoja</p>
+                </div>
+                <div class="icon-item" data-name="mascota">
+                    <img src="icons/pet.svg" alt="Mascota">
+                    <p>Mascota</p>
+                </div>
+                <div class="icon-item" data-name="feliz">
+                    <img src="icons/happy.svg" alt="Feliz">
+                    <p>Feliz</p>
+                </div>
+                <div class="icon-item" data-name="galleta">
+                    <img src="icons/cookie.svg" alt="Galleta">
+                    <p>Galleta</p>
+                </div>
+                <div class="icon-item" data-name="diente">
+                    <img src="icons/diente.svg" alt="Diente">
+                    <p>Diente</p>
+                </div>
+                <div class="icon-item" data-name="volcan">
+                    <img src="icons/volcan.svg" alt="Volcan">
+                    <p>Volcan</p>
+                </div>
+                <div class="icon-item" data-name="tierra">
+                    <img src="icons/tierra.svg" alt="Tierra">
+                    <p>Tierra</p>
+                </div>
+                <div class="icon-item" data-name="hueso">
+                    <img src="icons/hueso.svg" alt="Hueso">
+                    <p>Hueso</p>
+                </div>
+                <div class="icon-item" data-name="calavera">
+                    <img src="icons/skull.svg" alt="Calavera">
+                    <p>Calavera</p>
+                </div>
+                <div class="icon-item" data-name="huevo">
+                    <img src="icons/egg.svg" alt="Huevo">
+                    <p>Huevo</p>
+                </div>
+                <div class="icon-item" data-name="luna">
+                    <img src="icons/luna.svg" alt="Luna">
+                    <p>Luna</p>
+                </div>
+                <div class="icon-item" data-name="cuenta">
+                    <img src="icons/account.svg" alt="Cuenta">
+                    <p>Cuenta</p>
+                </div>
+                <div class="icon-item" data-name="info">
+                    <img src="icons/info.svg" alt="Info">
+                    <p>Info</p>
+                </div>
+                <div class="icon-item" data-name="visibilidad">
+                    <img src="icons/visibilidad.svg" alt="Visibilidad">
+                    <p>Visibilidad</p>
+                </div>
+                <div class="icon-item" data-name="calendario">
+                    <img src="icons/calendario.svg" alt="Calendario">
+                    <p>Calendario</p>
+                </div>
+                <div class="icon-item" data-name="reloj">
+                    <img src="icons/reloj.svg" alt="Reloj">
+                    <p>Reloj</p>
+                </div>
+                <div class="icon-item" data-name="ayuda">
+                    <img src="icons/help.svg" alt="Ayuda">
+                    <p>Ayuda</p>
+                </div>
+                <div class="icon-item" data-name="advertencia">
+                    <img src="icons/warn.svg" alt="Advertencia">
+                    <p>Advertencia</p>
+                </div>
+                <div class="icon-item" data-name="lenguaje">
+                    <img src="icons/language.svg" alt="Lenguaje">
+                    <p>Lenguaje</p>
+                </div>
+                <div class="icon-item" data-name="cerrado">
+                    <img src="icons/lock.svg" alt="Cerrado">
+                    <p>Cerrado</p>
+                </div>
+                <div class="icon-item" data-name="error">
+                    <img src="icons/error.svg" alt="Error">
+                    <p>Error</p>
+                </div>
+                <div class="icon-item" data-name="verificado">
+                    <img src="icons/verification.svg" alt="Verificado">
+                    <p>Verificado</p>
+                </div>
+                <div class="icon-item" data-name="logo dev">
+                    <img src="icons/logo-dev.svg" alt="Logo DEV">
+                    <p>Logo DEV</p>
+                </div>
+                <div class="icon-item" data-name="youtube">
+                    <img src="icons/youtube.svg" alt="Youtube">
+                    <p>YouTube</p>
+                </div>
+                <div class="icon-item" data-name="gmail">
+                    <img src="icons/mail.svg" alt="Gmail">
+                    <p>Gmail</p>
+                </div>
+                <div class="icon-item" data-name="llamada">
+                    <img src="icons/call.svg" alt="Call">
+                    <p>Llamada</p>
+                </div>
+                <div class="icon-item" data-name="notificacion">
+                    <img src="icons/notifications.svg" alt="Notificacion">
+                    <p>Notificacion</p>
+                </div>
+                <div class="icon-item" data-name="enviar">
+                    <img src="icons/send.svg" alt="Enviar">
+                    <p>Enviar</p>
+                </div>
+                <div class="icon-item" data-name="chat">
+                    <img src="icons/chat.svg" alt="Chat">
+                    <p>Chat</p>
+                </div>
+                <div class="icon-item" data-name="link">
+                    <img src="icons/link.svg" alt="Link">
+                    <p>Link</p>
+                </div>
+                <div class="icon-item" data-name="foros">
+                    <img src="icons/forums.svg" alt="Foros">
+                    <p>Foros</p>
+                </div>
+                <div class="icon-item" data-name="inventario 2">
+                    <img src="icons/inventory2.svg" alt="Inventario 2">
+                    <p>Inventario 2</p>
+                </div>
+                <div class="icon-item" data-name="contactar soporte">
+                    <img src="icons/contact-support.svg" alt="Contactar Soporte">
+                    <p>Contactar Soporte</p>
+                </div>
+                <div class="icon-item" data-name="editar">
+                    <img src="icons/edit.svg" alt="Editar">
+                    <p>Editar</p>
+                </div>
+                <div class="icon-item" data-name="imagen">
+                    <img src="icons/image.svg" alt="Imagen">
+                    <p>Imagen</p>
+                </div>
+                <div class="icon-item" data-name="jugar">
+                    <img src="icons/play.svg" alt="Jugar">
+                    <p>Jugar</p>
+                </div>
+                <div class="icon-item" data-name="micro">
+                    <img src="icons/mic.svg" alt="Micro">
+                    <p>Micro</p>
+                </div>
+                <div class="icon-item" data-name="subir volumen">
+                    <img src="icons/volumen-up.svg" alt="Subir volumen">
+                    <p>Subir volumen</p>
+                </div>
+                <div class="icon-item" data-name="musica">
+                    <img src="icons/music.svg" alt="Musica">
+                    <p>Musica</p>
+                </div>
+                <div class="icon-item" data-name="quitar volumen">
+                    <img src="icons/volumen-off.svg" alt="Quitar volumen">
+                    <p>Quitar volumen</p>
+                </div>
+                <div class="icon-item" data-name="repetir">
+                    <img src="icons/replay.svg" alt="Repetir">
+                    <p>Repetir</p>
+                </div>
+                <div class="icon-item" data-name="pausar">
+                    <img src="icons/pause.svg" alt="Pausar">
+                    <p>Pausar</p>
+                </div>
+                <div class="icon-item" data-name="rapido">
+                    <img src="icons/speed.svg" alt="Rapido">
+                    <p>Rapido</p>
+                </div>
+                <div class="icon-item" data-name="stop">
+                    <img src="icons/stop.svg" alt="Stop">
+                    <p>Stop</p>
+                </div>
+                <div class="icon-item" data-name="stop circulo">
+                    <img src="icons/stop-circle.svg" alt="Stop Circulo">
+                    <p>Stop Circulo</p>
+                </div>
+                <div class="icon-item" data-name="videollamada">
+                    <img src="icons/video-call.svg" alt="Videollamada">
+                    <p>Videollamada</p>
+                </div>
         </div>
+    </div>
+    </div>
     </main>
 
-    <div id="iconModal" class="modal">
+    <div id="iconModal" class="modal" style="display:none;">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
+            <span class="close-button" onclick="closeModal()">&times;</span>
             <div class="modal-icon-preview">
                 <img id="modalIcon" src="" alt="">
                 <p id="modalIconName"></p>
@@ -234,6 +474,7 @@
         </div>
     </div>
 
-    <script src="/components/main.js"></script>
+    <script src="components/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/1.5/canvg.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,190 @@
+/* Estilos básicos para la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body svg * {
+    fill: white !important;
+}
+
+/* Estilos para el encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1f1f1f;
+}
+
+.logo p {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.search-bar {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+    margin-left: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+/* Estilos para la galería de iconos */
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+    fill: white;
+}
+
+.icon-item {
+    width: 80px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    color: white;
+    fill: white;
+}
+
+.icon-item svg path {
+    fill: white;
+}
+
+.icon-item:hover {
+    transform: scale(1.1);
+}
+
+.icon-item img {
+    width: 50px;
+    height: 50px;
+    fill: white;
+}
+
+.icon-item p {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+/* Estilos para los filtros */
+.filters {
+    padding: 20px;
+    text-align: center;
+}
+
+.filters button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background-color: #444;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #2b2b2b;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close-button {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover, .close-button:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-icon-preview img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.download-buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #575757;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.download-buttons a:hover {
+    background-color: #777;
+}
+
+/* Estilos generales para el scrollbar en WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;  /* Ancho de la scrollbar vertical */
+    height: 12px; /* Altura de la scrollbar horizontal */
+}
+
+/* Fondo del track del scrollbar */
+::-webkit-scrollbar-track {
+    background: #333; /* Color de fondo del track */
+    border-radius: 10px; /* Bordes redondeados del track */
+}
+
+/* Estilo del pulgar (thumb) del scrollbar */
+::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a; /* Color del pulgar */
+    border-radius: 10px; /* Bordes redondeados del pulgar */
+    border: 2px solid #2b2b2b; /* Borde alrededor del pulgar para crear separación */
+}
+
+/* Cambiar color al pasar el mouse sobre el pulgar */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #6b6b6b; /* Color del pulgar al pasar el mouse */
+}
+
+/* Ocultar botones del scrollbar */
+::-webkit-scrollbar-button {
+    display: none; /* Oculta los botones del scrollbar */
+}
